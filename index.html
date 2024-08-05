@@ -68,7 +68,11 @@
         </div>
     </section>
 
-    <section id="section-2" class="section">Section 2</section>
+    <section id="section-2" class="section">
+        <div id="hero-2" class="hero-img-2">
+            <img src="./src/assets/hero-img-2.svg" alt="">
+        </div>
+    </section>
 
     <script>
         gsap.registerPlugin(ScrollTrigger)
@@ -107,6 +111,11 @@
         }, "<")
 
         tl.to("#hero", {
+            x: "100vh",
+            ease: "none",
+        }, "<")
+
+        tl.to("#hero-2", {
             x: "100vh",
             ease: "none",
         }, "<")
