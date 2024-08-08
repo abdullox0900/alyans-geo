@@ -10,33 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            height: 200vh;
-            /* Scroll uchun joy */
-        }
 
-        .section {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 48px;
-            color: white;
-        }
-
-        #section-1 {
-            left: 0;
-            background-color: #F4F7FF;
-            z-index: 1;
-            /* Z-index pastroq */
-        }
     </style>
 </head>
 
@@ -53,11 +27,19 @@
         <a href="#">
             <img src="./src/assets/logo.svg" alt="" width="71" height="71">
         </a>
-        <nav id="nav" class="nav"></nav>
+        <nav id="nav" class="nav flex items-center justify-between px-[27px]">
+            <div class="text-[#C4C6DB] font-light">Альянс гео</div>
+            <img src="./src/assets/nav.svg" alt="" width="850px">
+            <button
+                class="flex items-center gap-[5px] bg-[#2C3041] text-white text-[14px] px-[5px] py-[10px] rounded-[25px]">
+                <img src="" alt="">
+                Оставить заявку
+            </button>
+        </nav>
     </div>
 
     <section id="section-1" class="section">
-        <div class="box-1 box-1-content">единый поставщик услуг в сферах Инженерных изысканий и проектировнания
+        <div class="box-1 box-1-content">единый поставщик услуг в сферах Инженерных изысканийи проектировнания
             промышленных обьектов
         </div>
         <div id="hero" class="hero-img">
@@ -66,12 +48,43 @@
         <div class="box-2">
             <img src="./src/assets/tags.svg" alt="">
         </div>
+        <!-- <div class="">
+            Уникальная система взаимодействия при реализации проекта
+        </div> -->
     </section>
 
     <section id="section-2" class="section">
         <div id="hero-2" class="hero-img-2">
-            <img src="./src/assets/hero-img-2.svg" alt="">
+            <div id="hero-2-inner">
+                <div id="u-images" class="u-images"> <img id="u-img-top" src="./src/assets/hero-2/img-1-top.svg" alt="">
+                    <img id="u-img-oval" src="./src/assets/hero-2/img-1-oval.svg" alt=""> <img id="u-img-center"
+                        src="./src/assets/hero-2/img-1-center.svg" alt=""> <img id="u-img-body"
+                        src="./src/assets/hero-2/img-1-body.svg" alt="">
+                    <img id="u-img-bottom" src="./src/assets/hero-2/img-1-buttom.svg" alt="">
+                </div>
+            </div>
         </div>
+        <div id="u-element" class="flex justify-between w-[90%] fixed bottom-[-500px] right-[-20%]">
+            <div id="u-element-one" class="w-[450px] h-[600px]">
+                <img src="./src/assets/hero-2/11.svg" alt="">
+            </div>
+            <div id="u-element-one" class="w-[450px] h-[600px]">
+                <img src="./src/assets/hero-2/12.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="section-3" class="section-3">
+        <h2>Section 3</h2>
+        Bu yerga section-3 tarkibini qo'shing
+    </section> -->
+
+    <section id="section-4" class="section">
+        <h2>Section 4</h2>
+    </section>
+
+    <section id="section-5" class="section">
+        <h2>Section 5</h2>
     </section>
 
     <script>
@@ -81,8 +94,10 @@
             scrollTrigger: {
                 trigger: "body",
                 start: "top top",
-                end: "bottom bottom",
+                end: "200% bottom",
                 scrub: 1,
+                pin: true, // Body ni pin qilamiz
+                pinSpacing: true
             }
         })
 
@@ -93,6 +108,16 @@
 
         tl.to("#section-2", {
             x: "-100%",
+            ease: "none",
+        }, "<")
+
+        tl.to("#section-3", {
+            x: "-200%",
+            ease: "none",
+        }, "<")
+
+        tl.to("#u-element", {
+            x: "-30%",
             ease: "none",
         }, "<")
 
@@ -119,6 +144,67 @@
             x: "140vh",
             ease: "none",
         }, "<")
+
+        tl.to("#hero-2-inner", {
+            x: "55%", // Gorizontal markazga
+            y: "30%", // Vertikal markazga
+            scale: 1.2, // O'lchamini kattalashtirish
+            ease: "none",
+            duration: 2
+        }, ">")
+
+            .to("#u-img-top", {
+                x: -50,
+                y: -150,
+                duration: 2,
+                ease: "none"
+            }, "<")
+
+            // Oval shakl uchun animatsiya
+            .to("#u-img-oval", {
+                x: -100,
+                y: -40,
+                duration: 2,
+                ease: "none"
+            }, "<") // "<" bu animatsiyani oldingi animatsiya bilan bir vaqtda boshlashni bildiradi
+
+            // Markazdagi rasm uchun animatsiya
+            .to("#u-img-center", {
+                y: -50,
+                duration: 2,
+                ease: "none"
+            }, "<")
+
+            // Tana qismi uchun animatsiya
+            .to("#u-img-body", {
+                x: 100,
+                y: 50,
+                duration: 2,
+                ease: "none"
+            }, "<")
+
+            // Pastki qism uchun animatsiya
+            .to("#u-img-bottom", {
+                x: -50,
+                y: 150,
+                duration: 2,
+                ease: "none"
+            }, "<")
+
+            .to("#u-element-one, #u-element-one", { // Ikkinchi element ham "u-element-one" id bilan berilgan, uni "u-element-two" ga o'zgartirish kerak
+                y: "-100vh", // Har bir element uchun alohida yuqoriga ko'tarish
+                ease: "none",
+                duration: 2,
+            }, "<")
+
+
+        // ScrollTrigger.create({
+        //     trigger: "#section-2",
+        //     start: "top center",
+        //     end: "bottom center",
+        //     animation: gsap.to("#u-img-oval", { y: 50, rotation: 360, duration: 2, ease: "none" }),
+        //     scrub: 1
+        // })
 
         gsap.to('.box-1', {
             x: '-50vw', // Ekran kengligi bo'yicha chapga siljitish

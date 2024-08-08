@@ -1,5 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
 body {
+    overflow-x: hidden;
+    font-family: "Unbounded", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
     background-color: #F4F7FF;
+}
+
+#hero-2-inner {
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.u-images {
+    position: relative;
+    width: 350px;
+    height: 778px;
+    /* border: 1px solid black; */
+    transform: scale(0.7);
+}
+
+#u-img-top {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+#u-img-center {
+    position: absolute;
+    top: 83px;
+    right: 80px;
+    z-index: 1;
+}
+
+#u-img-body {
+    position: absolute;
+    top: 120px;
+    right: 0;
+}
+
+#u-img-oval {
+    position: absolute;
+    top: 152px;
+    left: 84px;
+    z-index: 2;
+}
+
+#u-img-bottom {
+    position: absolute;
+    left: -10px;
+    top: 370px;
+    z-index: 1;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 200vh;
+    /* Scroll uchun joy */
+}
+
+.section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+}
+
+#section-1 {
+    left: 0;
+    background-color: #F4F7FF;
+    z-index: 1;
+    /* Z-index pastroq */
 }
 
 .img {
@@ -36,7 +116,7 @@ body {
     position: fixed;
     width: 96%;
     height: 71px;
-    top: 3%;
+    top: 1.5%;
     left: 50%;
     transform: translate(-50%, 20%);
     z-index: 10;
@@ -91,10 +171,25 @@ body {
     bottom: 0;
 }
 
+.hero-img img {
+    height: 650px;
+}
+
 .hero-img-2 {
     position: absolute;
     bottom: 0;
-    left: -47%;
+    left: -50.1%;
     width: 347px;
-    height: 836px;
+    height: 750px;
+}
+
+#section-3 {
+    position: fixed;
+    bottom: 0;
+    left: 200%;
+    /* Ekrandan tashqarida boshlaydi */
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    /* O'zingiz xohlagan rangni qo'ying */
 }
