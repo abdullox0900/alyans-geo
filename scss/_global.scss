@@ -1,0 +1,44 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	font-family: 'Unbounded', sans-serif;
+	height: 200vh;
+	background-color: #f4f7ff;
+	font-style: normal;
+	font-optical-sizing: auto;
+	/* Scroll uchun joy */
+}
+
+.hover {
+	transition: all 0.3s ease;
+}
+
+.hover:hover {
+	opacity: 0.8;
+}
+
+.hover:active {
+	opacity: 0.6;
+}
+
+.section {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	font-size: 48px;
+	color: white;
+}
+
+#section-3 {
+	position: fixed;
+	bottom: 0;
+	left: 200%;
+	/* Ekrandan tashqarida boshlaydi */
+	width: 100%;
+	height: 100vh;
+	background-color: red;
+	/* O'zingiz xohlagan rangni qo'ying */
+}

@@ -1,0 +1,40 @@
+.u-images {
+	position: relative;
+	width: 350px;
+	height: 778px;
+	/* border: 1px solid black; */
+	transform: scale(0.7);
+}
+
+#u-img-top {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+}
+
+#u-img-center {
+	position: absolute;
+	top: 83px;
+	right: 80px;
+	z-index: 1;
+}
+
+#u-img-body {
+	position: absolute;
+	top: 120px;
+	right: 0;
+}
+
+#u-img-oval {
+	position: absolute;
+	top: 152px;
+	left: 84px;
+	z-index: 2;
+}
+
+#u-img-bottom {
+	position: absolute;
+	left: -10px;
+	top: 370px;
+	z-index: 1;
+}
